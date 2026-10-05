@@ -1,0 +1,4 @@
+interface:
+  display_name: "Jitter Motion"
+  short_description: "Editable UI motion, gestures and timing in Jitter"
+  default_prompt: "Use $jitter-motion to build or refine this editable Jitter walkthrough from the supplied design and motion reference."
