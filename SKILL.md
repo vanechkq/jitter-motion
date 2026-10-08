@@ -11,11 +11,12 @@ Build an editable interaction sequence that communicates the product clearly. Ma
 
 - Establish the authorized destination, source designs, and references. References are component sources, not destinations to modify. Use the available connector or documented UI controls; do not assume a private API exists.
 - Import editable design layers through the available Figma/Jitter workflow. Check fonts, bounds, clipping and effects before composing motion. Preserve original artwork; raster assets are appropriate for supplied photos or rendered effects.
+- If Figma → Jitter export rasterizes an editable element with a warning such as “remove corner smooth radius”, set that element’s corner smoothing in Figma to 0% (for example, replace 60% with 0%), then export/import it again. Preserve the actual corner radius and confirm that Jitter receives an editable vector rather than a PNG. Do not accept rasterization as the workaround for corner smoothing.
 - Organize layers by persistent function: navigation, fixed controls, scrolling viewport and content, changing content, transition elements, gesture indicators. Do not construct an interaction by stacking complete copies of every screen.
 - Reuse shared controls and their actual layers/effects. Keep persistent chrome separate from moving content. Group related elements around the coordinate system in which they move.
 - Use one layer in Layers for a recurring element or event; put its repeated appearances in Animation. For example, reuse one “Memory updated” notice for every update instead of creating a notice layer per event. Give each occurrence its own named animation group targeting the same layer, and restore its hidden/resting state between occurrences. When consolidating existing duplicates, preserve appearance and timing, retarget all operations, and remove unused layers only after checking the complete sequence.
 - Group timeline operations by meaningful action, with gesture, control response and dependent movement together. Name groups so the owner can retime a whole action without separating synchronized parts.
-- Keep the canvas legible: current scenarios aligned in order, references and reserves in separate rows with clear names. Preserve earlier versions when requested; avoid accumulating unnamed working copies.
+- Keep the canvas legible: current scenarios aligned in chronological order from left to right, with new versions placed to the right of earlier versions, references and reserves in separate rows with clear names. Preserve earlier versions when requested; avoid accumulating unnamed working copies.
 
 ## Gesture behavior and alignment
 
